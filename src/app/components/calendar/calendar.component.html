@@ -1,0 +1,30 @@
+<div class="calendar">
+  <div class="weekdays">
+    <div class="day header">Sun</div>
+    <div class="day header">Mon</div>
+    <div class="day header">Tue</div>
+    <div class="day header">Wen</div>
+    <div class="day header">Thu</div>
+    <div class="day header">Fri</div>
+    <div class="day header">Sat</div>
+
+  </div>
+  <div class="weeks" *ngFor="let week of calendar">
+    <div class="day plain"
+         *ngFor="let day of week.days"
+         [class.disabled]="day.disabled"
+         [class.tasked]="day.tasked"
+         (click)="onSelect(day)"
+    >
+      <div
+        [class.selected]="day.selected"
+        [class.active]="day.active"
+      >
+        {{ day.value | moment:'ddd DD' }}
+        <div *ngFor="let task of day.tasks">
+          {{task.title}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
