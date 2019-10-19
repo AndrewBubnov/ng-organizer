@@ -15,42 +15,30 @@ header {
 }
 .btn {
   display: inline-block;
-  background: #cc2929;
-
-  font-size: 1rem;
-
-  cursor: pointer;
-  margin-right: .6rem;
-  transition: opacity .2s;
-
-
   border: none;
   outline: none;
-  padding: 1rem;
-
-  text-transform: uppercase;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 5px;
   color: white;
-  box-shadow: 0 0 4px #999;
-
 }
-
+.orange-icon{
+  color: #FF4500;
+  cursor: pointer;
+}
 
 .btn-block {
   display: block;
   width: 100%;
-  background-color: hsl(200deg, 50%, 50%);
   transition: background 0.6s;
 }
-.btn-block:active {
-  background-color: hsla(200deg, 50%, 50%, 0.32);
-  transition: background 0s;
-}
+
 .btn-primary {
-  background: orangered;
+  background: #FF4500;
   color: #fff;
 }
 .btn:disabled {
-   background: #CC633D;
+   background: #cc3600;
    color: #c7c7c7;
    cursor: not-allowed;
 }

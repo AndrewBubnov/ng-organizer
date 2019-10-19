@@ -13,6 +13,7 @@
   transition: all .2s;
   border-left: 1px solid #000;
   border-bottom: 1px solid #000;
+  overflow: hidden;
 }
 .header{
   padding: .5rem 1rem;
@@ -44,3 +45,9 @@
 .tasked{
   background: lightblue;
 }
+.task-container{
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}
+

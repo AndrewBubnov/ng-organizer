@@ -6,12 +6,12 @@
 
   <main>
     <ul *ngIf="tasks.length; else noTasks">
-      <li class="task" *ngFor="let task of tasks; let i = index">
+      <li class="task" *ngFor="let task of tasks">
         <span>
-          <strong>{{i + 1}}</strong>
           {{task.title}}
         </span>
-        <button class="btn btn-primary" (click)="remove(task)">Remove</button>
+<!--        <button class="btn btn-primary" (click)="remove(task)"><i class="material-icons">delete</i></button>-->
+        <i class="material-icons orange-icon" (click)="remove(task)">delete</i>
       </li>
     </ul>
     <ng-template #noTasks>
