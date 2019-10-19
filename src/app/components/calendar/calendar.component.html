@@ -9,7 +9,7 @@
     <div class="day header">Sat</div>
 
   </div>
-  <div class="weeks" *ngFor="let week of calendar">
+  <div class="weeks" *ngFor="let week of (dateService.calendar$ | async)">
     <div class="day plain"
          *ngFor="let day of week.days"
          [class.disabled]="day.disabled"
@@ -22,8 +22,10 @@
         >
         {{ day.value | moment:'ddd DD' }}
         </span>
-        <div class="task-container" *ngFor="let task of day.tasks" >
-          {{task.title | ellipsify}}
+        <div class="task-container">
+          <div *ngFor="let task of day.tasks">
+            {{task.title | ellipsify}}
+          </div>
         </div>
       </div>
     </div>

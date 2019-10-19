@@ -39,11 +39,8 @@
   font-weight: bold;
 }
 .selected {
-  color: blue;
+  color: #00cc00;
   font-weight: bold;
-}
-.tasked{
-  background: lightblue;
 }
 .task-container{
   width: 100%;
