@@ -15,7 +15,6 @@ import { Week } from '../models/Week'
 export class TasksService {
   static url = 'https://ng-calendar-c73fc.firebaseio.com/tasks';
 
-  public tasked$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
   public error$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
 
