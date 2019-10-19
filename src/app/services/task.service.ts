@@ -1,28 +1,14 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {BehaviorSubject, Observable, throwError} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map }from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 import * as moment from 'moment';
-import {Day, Week} from '../components/calendar/calendar.component';
-import {DateService} from './date.service';
-
-export interface Task {
-  id?: string
-  title: string
-  date?: string
-  index?: string
-}
-
-export interface DayTasks {
-  date: string
-  tasks: Task[]
-}
-
-
-
-interface CreateResponse {
-  name: string
-}
+import { DateService } from './date.service';
+import { Task } from '../models/Task'
+import { DayTasks } from '../models/DayTasks'
+import { CreateResponse } from '../models/CreateResponse'
+import { Day } from '../models/Day'
+import { Week } from '../models/Week'
 
 
 @Injectable({providedIn: 'root'})

@@ -2,27 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { DateService } from '../../services/date.service';
 import { TasksService } from '../../services/task.service';
-import {filter, switchMap} from 'rxjs/operators';
-export {Task} from '../../services/task.service'
+import { filter, switchMap } from 'rxjs/operators';
+import { Day } from '../../models/Day';
 
-export interface Day {
-  value: moment.Moment
-  active: boolean
-  disabled: boolean
-  selected: boolean
-  tasked: boolean
-  tasks: Task[]
-}
-
-interface Task {
-  id?: string
-  title: string
-  date?: string
-  index?: string
-}
-
-
-export interface Week {
+interface Week {
   days: Day[]
 }
 

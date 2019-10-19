@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {DateService} from '../../services/date.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Task, TasksService} from '../../services/task.service';
-import {Day, Week} from '../calendar/calendar.component';
+import { TasksService } from '../../services/task.service';
+import { Task } from '../../models/Task'
+import { Week } from '../../models/Week';
 
 
 @Component({

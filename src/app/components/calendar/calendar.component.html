@@ -13,7 +13,6 @@
     <div class="day plain"
          *ngFor="let day of week.days"
          [class.disabled]="day.disabled"
-         [class.tasked]="day.tasked"
          (click)="onSelect(day)"
     >
       <div>
@@ -23,7 +22,7 @@
         >
         {{ day.value | moment:'ddd DD' }}
         </span>
-        <div class="task-container" *ngFor="let task of day.tasks">
+        <div class="task-container" *ngFor="let task of day.tasks" >
           {{task.title | ellipsify}}
         </div>
       </div>
