@@ -37,11 +37,11 @@ export class DateService {
 
   generateCalendar = () => {
     const currentDay: moment.Moment = this.date$.value;
-    const firstDay = currentDay.clone().startOf('month').startOf('week');
-    const lastDay = currentDay.clone().endOf('month').endOf('week');
+    const firstDay = currentDay.clone().startOf('month').startOf('isoWeek');
+    const lastDay = currentDay.clone().endOf('month');
     const date = firstDay.clone().subtract(1, 'day');
     const calendar = [];
-    while (date.isBefore(lastDay)){
+    while (date.isBefore(lastDay, 'day')){
       calendar.push({
         days: Array.from({length: 7},
           () => {
@@ -49,8 +49,9 @@ export class DateService {
             const active = moment().isSame(value, 'date');
             const disabled = !currentDay.isSame(value, 'month');
             const selected = currentDay.isSame(value, 'day');
+            const dayOff = date.day() === 6 || date.day() === 0;
             const tasks = [];
-            return {value, active, disabled, selected, tasks}
+            return {value, active, disabled, selected, dayOff, tasks}
           })
       })
     }

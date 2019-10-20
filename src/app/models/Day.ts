@@ -6,5 +6,6 @@ export interface Day {
   active: boolean
   disabled: boolean
   selected: boolean
+  dayOff: boolean
   tasks: Task[]
 }

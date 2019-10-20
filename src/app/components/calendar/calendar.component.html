@@ -1,32 +1,35 @@
 <div class="calendar">
   <div class="weekdays">
-    <div class="day header">Sun</div>
-    <div class="day header">Mon</div>
-    <div class="day header">Tue</div>
-    <div class="day header">Wen</div>
-    <div class="day header">Thu</div>
-    <div class="day header">Fri</div>
-    <div class="day header">Sat</div>
-
+    <div class="day">Mon</div>
+    <div class="day">Tue</div>
+    <div class="day">Wen</div>
+    <div class="day">Thu</div>
+    <div class="day">Fri</div>
+    <div class="day dayOff">Sat</div>
+    <div class="day dayOff">Sun</div>
   </div>
   <div class="weeks" *ngFor="let week of (dateService.calendar$ | async)">
     <div class="day plain"
          *ngFor="let day of week.days"
          [class.disabled]="day.disabled"
+         [class.dayOff]="day.dayOff"
          (click)="onSelect(day)"
     >
-      <div>
-        <span
-          [class.selected]="day.selected"
-          [class.active]="day.active"
-        >
-        {{ day.value | moment:'ddd DD' }}
-        </span>
-        <div class="task-container">
-          <div *ngFor="let task of day.tasks">
-            {{task.title | ellipsify}}
+      <div class="circle"
+           [class.selected]="day.selected"
+           [class.active]="day.active"
+      >
+        {{ day.value | moment:'DD' }}
+      </div>
+      <div class="task-container" *ngIf="day.tasks.length > 0">
+        <div class="tasks-present" *ngIf="desktop; else mobile">
+          <div *ngFor="let task of day.tasks | tasksMap">
+            <div class="task">{{task.title | ellipsify}}</div>
           </div>
         </div>
+        <ng-template #mobile>
+          <div class="mobile-dot"></div>
+        </ng-template>
       </div>
     </div>
   </div>

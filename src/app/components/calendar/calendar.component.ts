@@ -13,6 +13,7 @@ import { filter, switchMap } from 'rxjs/operators';
 export class CalendarComponent implements OnInit {
 
   private month: number;
+  public desktop: boolean = window.innerWidth > 380;
 
   constructor(private dateService: DateService, private taskService: TasksService) {
   }

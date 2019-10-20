@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { SelectorComponent } from './components/selector/selector.component';
 import { MomentPipe } from './pipes/moment.pipe';
 import { EllipsisPipe } from './pipes/elipsify.pipe';
+import { TasksMapPipe } from './pipes/tasks-map.pipe';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { OrganizerComponent } from './components/organizer/organizer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material';
     SelectorComponent,
     MomentPipe,
     EllipsisPipe,
+    TasksMapPipe,
     CalendarComponent,
     OrganizerComponent,
     ErrorSnackbarComponent,

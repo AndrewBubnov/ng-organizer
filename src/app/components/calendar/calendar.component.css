@@ -1,50 +1,80 @@
 .calendar{
   width: 100%;
   margin-bottom: 1rem;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
 }
 .weeks{
   display: flex;
 }
 .day{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 14.286%;
-  text-align: center;
-  transition: all .2s;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
-  overflow: hidden;
-}
-.header{
-  padding: .5rem 1rem;
-}
-.plain{
-  height: 80px;
-  padding-top: 10px;
-}
-.day:hover:not(.disabled) {
-  background: #eee;
   cursor: pointer;
+}
+
+.plain{
+  height: 100px;
+  padding-top: 10px;
 }
 .weekdays{
   display: flex;
-  background: #c8c8c8;
+  margin-bottom: 10px;
+  color: #9bb9de;
+  font-weight: 500;
 }
 .disabled {
-  color: #a6a6a6;
+  opacity: .4;
   cursor: not-allowed;
 }
 .active {
-  color: orangered;
-  font-weight: bold;
+  border: 1px solid #9bb9de;
 }
 .selected {
-  color: #00cc00;
-  font-weight: bold;
+  background: #9bb9de;
+  color: #fff;
 }
 .task-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
+  margin-top: 5px;
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.task{
+  width: 100%;
+  background: #9bb9de;
+  color: #fff;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+.mobile-dot{
+  width: 10px;
+  height: 10px;
+  background: #9bb9de;
+  border-radius: 50%;
+  text-align: center;
+}
+.tasks-present{
+  width: 100%;
+}
+.dayOff{
+  color: #e64545;
+}
+@media screen and (max-width: 380px) {
+  .plain {
+    height: 70px;
+  }
 }
 
