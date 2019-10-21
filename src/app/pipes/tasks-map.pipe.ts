@@ -7,9 +7,10 @@ const emptyTask: Task = {
 
 @Pipe({
   name: 'tasksMap',
+  pure: false,
 })
 export class TasksMapPipe implements PipeTransform {
   transform(tasks: Task[]): Task[] {
-    return tasks.length > 1 ? [tasks[0], emptyTask] : tasks;
+    return tasks.length > 2 ? [tasks[0], emptyTask] : tasks;
   }
 }

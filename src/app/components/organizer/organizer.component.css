@@ -54,6 +54,7 @@ input {
   padding: .4rem 0;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 5px;
   outline: none;
   margin-bottom: .5rem;
 }

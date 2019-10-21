@@ -15,11 +15,10 @@ export class CalendarComponent implements OnInit {
   private month: number;
   public desktop: boolean = window.innerWidth > 380;
 
-  constructor(private dateService: DateService, private taskService: TasksService) {
+  constructor(public dateService: DateService, private taskService: TasksService) {
   }
 
   ngOnInit() {
-
     this.dateService.date$.subscribe(() => {
       if (this.dateService.date$.value.month() !== this.month){
         this.dateService.generateCalendar();
@@ -45,6 +44,14 @@ export class CalendarComponent implements OnInit {
     if (!day.disabled){
       this.dateService.selectDate(day.value);
     }
+  }
+
+  onSwipeLeft = e => {
+    if (e.distance > window.innerWidth *.3) this.dateService.changeMonth(-1)
+  }
+
+  onSwipeRight = e => {
+    if (e.distance > window.innerWidth *.3) this.dateService.changeMonth(1)
   }
 
 }

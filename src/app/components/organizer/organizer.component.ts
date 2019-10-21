@@ -18,7 +18,7 @@ export class OrganizerComponent implements OnInit {
   calendar: Week[]
 
 
-  constructor(private dateService: DateService,
+  constructor(public dateService: DateService,
               private taskService: TasksService) {
   }
 
