@@ -12,6 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorSnackbarComponent } from './components/error-snackbar/error-snackbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+    'pinch': { enable: false },
+    'rotate': { enable: false }
+  }
+}
 
 
 @NgModule({
@@ -33,7 +41,12 @@ import { MatSnackBarModule } from '@angular/material';
     BrowserAnimationsModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
