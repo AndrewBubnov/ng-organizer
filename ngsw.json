@@ -1,0 +1,99 @@
+{
+  "configVersion": 1,
+  "timestamp": 1571776244798,
+  "index": "https://andrewbubnov.github.io/pwa-organizer/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://andrewbubnov.github.io/pwa-organizer/favicon.ico",
+        "https://andrewbubnov.github.io/pwa-organizer/index.html",
+        "https://andrewbubnov.github.io/pwa-organizer/main-es2015.57009c5c53426619a46f.js",
+        "https://andrewbubnov.github.io/pwa-organizer/main-es5.57009c5c53426619a46f.js",
+        "https://andrewbubnov.github.io/pwa-organizer/manifest.webmanifest",
+        "https://andrewbubnov.github.io/pwa-organizer/polyfills-es2015.0ef207fb7b4761464817.js",
+        "https://andrewbubnov.github.io/pwa-organizer/polyfills-es5.2b9ce34c123ac007a8ba.js",
+        "https://andrewbubnov.github.io/pwa-organizer/runtime-es2015.e8a2810b3b08d6a1b6aa.js",
+        "https://andrewbubnov.github.io/pwa-organizer/runtime-es5.e8a2810b3b08d6a1b6aa.js",
+        "https://andrewbubnov.github.io/pwa-organizer/styles.09bc567d66410fe62f39.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.0509ab09c1b0d2200a41.woff2",
+        "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.29b882f018fa6fe75fd3.woff",
+        "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.96c476804d7a788cc1c0.eot",
+        "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.da4ea5cdfca6b3baab28.ttf",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-128x128.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-144x144.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-152x152.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-192x192.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-384x384.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-512x512.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-72x72.png",
+        "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "organizer-api",
+      "patterns": [
+        "\\/[^/]*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.0509ab09c1b0d2200a41.woff2": "308ee3580a4a34bd230025d460762d53b5344efc",
+    "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.29b882f018fa6fe75fd3.woff": "951adc0458f2ead8495da26886b1f1284a716eaa",
+    "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.96c476804d7a788cc1c0.eot": "b28698262d8d8766c7c1bede47059ebea19a90a0",
+    "https://andrewbubnov.github.io/pwa-organizer/MaterialIcons-Regular.da4ea5cdfca6b3baab28.ttf": "b2091f9964be16d1065d5afee6d0b258fe29a5ac",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://andrewbubnov.github.io/pwa-organizer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://andrewbubnov.github.io/pwa-organizer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://andrewbubnov.github.io/pwa-organizer/index.html": "3f7e1e52bd914fd2ee1053944f1eb617e20d2f09",
+    "https://andrewbubnov.github.io/pwa-organizer/main-es2015.57009c5c53426619a46f.js": "10e2c71150ece19c86488e199ba5439d01a98d1d",
+    "https://andrewbubnov.github.io/pwa-organizer/main-es5.57009c5c53426619a46f.js": "63add732f3d3af38fa52685116b5fa08b488456c",
+    "https://andrewbubnov.github.io/pwa-organizer/manifest.webmanifest": "9167a2b3f83a23e85048af4f0a4e7b170f4fc8fd",
+    "https://andrewbubnov.github.io/pwa-organizer/polyfills-es2015.0ef207fb7b4761464817.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
+    "https://andrewbubnov.github.io/pwa-organizer/polyfills-es5.2b9ce34c123ac007a8ba.js": "45c51483238468881240579c3fdecd19144cff17",
+    "https://andrewbubnov.github.io/pwa-organizer/runtime-es2015.e8a2810b3b08d6a1b6aa.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://andrewbubnov.github.io/pwa-organizer/runtime-es5.e8a2810b3b08d6a1b6aa.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://andrewbubnov.github.io/pwa-organizer/styles.09bc567d66410fe62f39.css": "752349fa2f00701d15a6a47b52decaa9b6325386"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
