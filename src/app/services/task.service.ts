@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map }from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import * as moment from 'moment';
 import { DateService } from './date.service';
 import { Task } from '../models/Task'
@@ -14,9 +14,6 @@ import { Week } from '../models/Week'
 @Injectable({providedIn: 'root'})
 export class TasksService {
   static url = 'https://ng-calendar-c73fc.firebaseio.com/tasks';
-
-  public error$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
 
   constructor(private http: HttpClient, private dateService: DateService) {}
 

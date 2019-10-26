@@ -35,9 +35,7 @@ export class CalendarComponent implements OnInit {
       .subscribe(tasks => {
           this.taskService.getIndexed(tasks, this.dateService.calendar$.value);
           this.month = this.dateService.date$.value.month();
-        },
-        error => this.taskService.error$.next(error));
-
+        });
   }
 
   onSelect = (day) => {

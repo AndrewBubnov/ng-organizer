@@ -8,17 +8,19 @@ import { TasksMapPipe } from './pipes/tasks-map.pipe';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { OrganizerComponent } from './components/organizer/organizer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { ErrorSnackbarComponent } from './components/error-snackbar/error-snackbar.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material';
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import {InterceptorService} from './services/interceptor.service';
 
 export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any> {
-    'pinch': { enable: false },
-    'rotate': { enable: false }
-  }
+  overrides = {
+    pinch: { enable: false },
+    rotate: { enable: false }
+  } as any;
 }
 
 
@@ -31,7 +33,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     TasksMapPipe,
     CalendarComponent,
     OrganizerComponent,
-    ErrorSnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,12 +40,18 @@ export class MyHammerConfig extends HammerGestureConfig {
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

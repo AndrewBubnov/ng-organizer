@@ -15,7 +15,7 @@ export class OrganizerComponent implements OnInit {
 
   form: FormGroup;
   tasks: Task[] = [];
-  calendar: Week[]
+  calendar: Week[];
 
 
   constructor(public dateService: DateService,
@@ -52,8 +52,7 @@ export class OrganizerComponent implements OnInit {
     this.taskService.createTask(task).subscribe(task => {
       this.tasks.push(task)
       this.form.reset()
-    },
-        err => this.taskService.error$.next(err))
+    })
   }
 
   remove(task: Task) {
@@ -66,7 +65,7 @@ export class OrganizerComponent implements OnInit {
         if (currentDay) break;
       }
       currentDay.tasks = this.tasks;
-    }, err => this.taskService.error$.next(err))
+    })
   }
 
 
