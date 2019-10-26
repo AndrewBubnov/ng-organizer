@@ -12,8 +12,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material';
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import {InterceptorService} from './services/interceptor.service';
 
 export class MyHammerConfig extends HammerGestureConfig {
@@ -41,7 +39,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
