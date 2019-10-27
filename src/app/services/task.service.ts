@@ -11,38 +11,51 @@ import { Day } from '../models/Day'
 import { Week } from '../models/Week'
 
 
+
 @Injectable({providedIn: 'root'})
 export class TasksService {
   static url = 'https://ng-calendar-c73fc.firebaseio.com/tasks';
-
+  public allTasks: any;
   constructor(private http: HttpClient, private dateService: DateService) {}
 
-  loadTasks(date: moment.Moment) {
-    const year = date.year();
-    const month = date.month() + 1;
+  loadTasks() {
     return this.http
-      .get<Task[]>(`${TasksService.url}/${year}/${month}/.json`)
+      .get<Task[]>(`${TasksService.url}/.json`)
       .pipe(
         map(tasks => {
           if (!tasks) {
             return [];
           }
-          const clone = JSON.parse(JSON.stringify(tasks));
-          const inputArray = Object.keys(clone).map(key => ({[key]: clone[key]}));
-          return inputArray.map(dayTask => {
-            const day = Object.keys(dayTask)[0];
-            const tasks = dayTask[day];
-            const dailyTasks = Object.keys(tasks).map(id => {
-              let task = {...tasks[id]};
-              return {id, ...task};
-            });
-            return {date: day, tasks: dailyTasks};
-          });
+          this.allTasks = tasks;
+          this.getTasksByMonth(moment())
         })
       );
   }
 
-  createTask(task: Task) {
+  getTasksByMonth = (date) => {
+    const month = date.month() + 1;
+    const year = date.year();
+
+    if (month in this.allTasks[year]){
+
+      const clone = JSON.parse(JSON.stringify(this.allTasks[year][month]));
+      const inputArray = Object.keys(clone).map(key => ({[key]: clone[key]}));
+      const outputArray = inputArray.map(dayTask => {
+        const day = Object.keys(dayTask)[0];
+        const tasks = dayTask[day];
+        const dailyTasks = Object.keys(tasks).map(id => {
+          let task = {...tasks[id]};
+          return {id, ...task};
+        });
+        return {date: day, tasks: dailyTasks};
+      });
+      this.assignTasksToCalendar( outputArray, this.dateService.calendar$.value);
+
+    }
+  };
+
+
+  createTask = (task: Task) => {
     const year = task.date.split('-')[2]
     const month = task.date.split('-')[1]
         return this.http
@@ -53,7 +66,8 @@ export class TasksService {
   }
 
 
-  getIndexed = (tasks: DayTasks[], calendar: Week[]) => {
+  assignTasksToCalendar = (tasks: DayTasks[], calendar: Week[]) => {
+
     tasks.forEach(task => {
       calendar.forEach(week => {
         const taskedDay: Day = week.days.find(item => item.value.format('DD-MM-YYYY') === task.date);

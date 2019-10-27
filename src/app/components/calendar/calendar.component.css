@@ -52,11 +52,11 @@
   transition: background-color .2s;
 }
 .task{
-  width: 100%;
+  width: 90%;
   background: #9bb9de;
   color: #fff;
   border-radius: 3px;
-  margin-bottom: 3px;
+  margin: 0 auto 3px auto;
   text-align: center;
 }
 .mobile-dot{

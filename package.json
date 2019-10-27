@@ -1,5 +1,5 @@
 {
-  "name": "ng-calendar",
+  "name": "ng-organizer",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,6 +20,7 @@
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
+    "@angular/pwa": "^0.803.14",
     "@angular/router": "~8.2.8",
     "@angular/service-worker": "~8.2.8",
     "angular-cli-ghpages": "^0.6.0",

@@ -5,10 +5,13 @@
 header{
   padding: 1rem 2rem;
 }
-::ng-deep .red-snackbar{
-  background: #e65c5c;
+::ng-deep .blue-snackbar{
+  background: #9bb9de;
   color: #fff;
+  font-weight: 500;
+  text-align: center;
 }
-::ng-deep .red-snackbar button{
+::ng-deep .blue-snackbar button{
   color: #fff;
+  font-weight: 600;
 }

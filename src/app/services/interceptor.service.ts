@@ -19,7 +19,7 @@ export class InterceptorService implements HttpInterceptor {
   }
 
   handleError = (err: HttpErrorResponse) => {
-    this.snackBar.open('Server Error', "Ok",{duration: 5000, panelClass: ['red-snackbar']})
+    this.snackBar.open('Server Error', "Ok",{duration: 5000, panelClass: ['blue-snackbar']});
     return throwError(err)
   }
 

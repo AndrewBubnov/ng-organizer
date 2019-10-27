@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '../../services/date.service';
-import { TasksService } from '../../services/task.service';
-import { filter, switchMap } from 'rxjs/operators';
 
 
 
@@ -15,7 +13,7 @@ export class CalendarComponent implements OnInit {
   private month: number;
   public desktop: boolean = window.innerWidth > 380;
 
-  constructor(public dateService: DateService, private taskService: TasksService) {
+  constructor(public dateService: DateService) {
   }
 
   ngOnInit() {
@@ -26,16 +24,6 @@ export class CalendarComponent implements OnInit {
         this.dateService.reSelectDay();
       }
     });
-
-    this.dateService.date$
-      .pipe(
-        filter(data => this.month !== data.month()),
-        switchMap(value => this.taskService.loadTasks(value))
-      )
-      .subscribe(tasks => {
-          this.taskService.getIndexed(tasks, this.dateService.calendar$.value);
-          this.month = this.dateService.date$.value.month();
-        });
   }
 
   onSelect = (day) => {
@@ -45,11 +33,11 @@ export class CalendarComponent implements OnInit {
   }
 
   onSwipeLeft = e => {
-    if (e.distance > window.innerWidth *.3) this.dateService.changeMonth(-1)
+    if (e.distance > window.innerWidth *.25) this.dateService.changeMonth(1)
   }
 
   onSwipeRight = e => {
-    if (e.distance > window.innerWidth *.3) this.dateService.changeMonth(1)
+    if (e.distance > window.innerWidth *.25) this.dateService.changeMonth(-1)
   }
 
 }
