@@ -1,6 +1,6 @@
 {
-  "name": "organizer",
-  "short_name": "Organizer",
+  "name": "Organizer",
+  "short_name": "organizer",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
