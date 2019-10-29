@@ -36,7 +36,7 @@ export class TasksService {
     const month = date.month() + 1;
     const year = date.year();
 
-    if (month in this.allTasks[year]){
+    if (this.allTasks[year] && this.allTasks[year][month]){
 
       const clone = JSON.parse(JSON.stringify(this.allTasks[year][month]));
       const inputArray = Object.keys(clone).map(key => ({[key]: clone[key]}));
